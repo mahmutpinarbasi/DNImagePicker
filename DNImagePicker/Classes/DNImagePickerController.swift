@@ -19,7 +19,7 @@ public protocol DNImagePickerControllerDelegate:class{
 public class DNImagePickerController: UIViewController{
     public weak var delegate: DNImagePickerControllerDelegate?
     public var mediaTypes:[String] = [kUTTypeMovie as String, kUTTypeImage as String]
-    public var maxTrimLength:Float = 60.0 // in seconds
+    public var maxTrimLength:Float = 10.0 // in seconds
     public var minTrimLength:Float = 3.0 // in seconds
     
     override public func viewDidLoad() {
