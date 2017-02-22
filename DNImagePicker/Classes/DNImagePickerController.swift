@@ -22,6 +22,8 @@ public class DNImagePickerController: UIViewController{
     public var maxTrimLength:Float = 10.0 // in seconds
     public var minTrimLength:Float = 3.0 // in seconds
     
+    override public var prefersStatusBarHidden: Bool { return true }
+    
     override public func viewDidLoad() {
         super.viewDidLoad()
         useDefaultPickerUI()

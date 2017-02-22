@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -112,6 +111,7 @@
                 <constraint firstItem="3sQ-zJ-Dul" firstAttribute="top" secondItem="VKP-HA-t1l" secondAttribute="bottom" id="s36-Nc-vot"/>
                 <constraint firstItem="31C-eQ-jKl" firstAttribute="trailing" secondItem="VKP-HA-t1l" secondAttribute="trailing" id="wVY-NG-BaZ"/>
             </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="91.5" y="101.5"/>
         </view>
     </objects>

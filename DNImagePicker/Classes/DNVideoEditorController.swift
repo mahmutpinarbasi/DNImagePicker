@@ -22,6 +22,8 @@ internal protocol DNVideoEditorControllerDelegate:class {
 internal class DNVideoEditorController: UIViewController{
     
     //MARK:- System Events
+    override var prefersStatusBarHidden: Bool { return true }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
