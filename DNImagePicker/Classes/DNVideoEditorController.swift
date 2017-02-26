@@ -21,12 +21,14 @@ internal protocol DNVideoEditorControllerDelegate:class {
 
 internal class DNVideoEditorController: UIViewController{
     
+    @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
     //MARK:- System Events
     override var prefersStatusBarHidden: Bool { return true }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         self.view.layoutIfNeeded()
+        
         loadAsset()
     }
     
@@ -34,10 +36,28 @@ internal class DNVideoEditorController: UIViewController{
         super.viewWillDisappear(animated)
         stopPlaybackTimeChecker()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        debugPrint("playbackScrollView height before update...\(self.playbackScrollView.frame.height)")
+        self.view.layoutIfNeeded()
+        self.scrollViewHeightConstraint.constant = self.nextEven(for: self.playbackScrollView.frame.height)
+        debugPrint("playbackScrollView height after update...\(self.playbackScrollView.frame.height)")
+    }
 
     //MARK:- View Events
     
     //MARK:- Utils
+    private func nextEven(for value:CGFloat) -> CGFloat {
+        let intVal = Int(ceil(value))
+        if intVal % 2 == 0 {
+            return CGFloat(value)
+        }
+        
+        return CGFloat(intVal+1)
+    }
+    
     private func loadAsset(){
         guard let url = videoUrl else { return }
         let asset = AVURLAsset(url: url)

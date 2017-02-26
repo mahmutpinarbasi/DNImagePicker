@@ -16,6 +16,7 @@
                 <outlet property="playbackScrollView" destination="hir-oL-m7b" id="7r7-0K-LqH"/>
                 <outlet property="playbackTrailingConstraint" destination="VFv-7c-4k1" id="3QM-A5-iSD"/>
                 <outlet property="playbackView" destination="iK6-kH-ByW" id="hHN-T8-hxB"/>
+                <outlet property="scrollViewHeightConstraint" destination="FiX-m6-tUe" id="qyO-Mh-9Fe"/>
                 <outlet property="trimmerView" destination="3sQ-zJ-Dul" id="Uxr-F3-Yc0"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vX0-c3-GEc"/>
             </connections>
