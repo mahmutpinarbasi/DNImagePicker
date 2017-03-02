@@ -14,6 +14,24 @@ import CoreMedia
 import Photos
 import ICGVideoTrimmer
 
+internal extension UIView {
+    
+    
+    func constraint(forIdentifier identifier:String) -> NSLayoutConstraint? {
+        
+        if let _superview = self.superview {
+            for constraint in _superview.constraints {
+                if identifier == constraint.identifier {
+                    return constraint
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+}
+
 internal protocol DNVideoEditorControllerDelegate:class {
     func videoEditorController(_ videoEditController: DNVideoEditorController, didSaveEditedVideoToPath editedVideoPath: URL?)
     func videoEditorControllerDidCancel(_ videoEditController: DNVideoEditorController)
@@ -21,7 +39,6 @@ internal protocol DNVideoEditorControllerDelegate:class {
 
 internal class DNVideoEditorController: UIViewController{
     
-    @IBOutlet weak var scrollViewHeightConstraint: NSLayoutConstraint!
     //MARK:- System Events
     override var prefersStatusBarHidden: Bool { return true }
     
@@ -40,10 +57,12 @@ internal class DNVideoEditorController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        debugPrint("playbackScrollView height before update...\(self.playbackScrollView.frame.height)")
-        self.view.layoutIfNeeded()
-        self.scrollViewHeightConstraint.constant = self.nextEven(for: self.playbackScrollView.frame.height)
-        debugPrint("playbackScrollView height after update...\(self.playbackScrollView.frame.height)")
+        if let constraint = self.view.constraint(forIdentifier: "scrollHeightIdentifier"){
+            self.view.layoutIfNeeded()
+            debugPrint("playbackScrollView height before update...\(self.playbackScrollView.frame.height)")
+            constraint.constant = self.nextEven(for: self.playbackScrollView.frame.height)
+            debugPrint("playbackScrollView height after update...\(self.playbackScrollView.frame.height)")
+        }
     }
 
     //MARK:- View Events

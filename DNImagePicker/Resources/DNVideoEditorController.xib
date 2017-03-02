@@ -16,7 +16,6 @@
                 <outlet property="playbackScrollView" destination="hir-oL-m7b" id="7r7-0K-LqH"/>
                 <outlet property="playbackTrailingConstraint" destination="VFv-7c-4k1" id="3QM-A5-iSD"/>
                 <outlet property="playbackView" destination="iK6-kH-ByW" id="hHN-T8-hxB"/>
-                <outlet property="scrollViewHeightConstraint" destination="FiX-m6-tUe" id="qyO-Mh-9Fe"/>
                 <outlet property="trimmerView" destination="3sQ-zJ-Dul" id="Uxr-F3-Yc0"/>
                 <outlet property="view" destination="iN0-l3-epB" id="vX0-c3-GEc"/>
             </connections>
@@ -103,7 +102,7 @@
                 <constraint firstItem="31C-eQ-jKl" firstAttribute="leading" secondItem="VKP-HA-t1l" secondAttribute="leading" id="3Nk-0i-ZiY"/>
                 <constraint firstAttribute="trailing" secondItem="3sQ-zJ-Dul" secondAttribute="trailing" constant="16" id="8Rd-qm-enC"/>
                 <constraint firstItem="VKP-HA-t1l" firstAttribute="top" secondItem="31C-eQ-jKl" secondAttribute="bottom" id="CHV-BT-uWM"/>
-                <constraint firstItem="hir-oL-m7b" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" id="FiX-m6-tUe"/>
+                <constraint firstItem="hir-oL-m7b" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" identifier="scrollHeightIdentifier" id="FiX-m6-tUe"/>
                 <constraint firstItem="3sQ-zJ-Dul" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="G2c-bF-8vi"/>
                 <constraint firstItem="VKP-HA-t1l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SBQ-P1-eqz"/>
                 <constraint firstAttribute="trailing" secondItem="VKP-HA-t1l" secondAttribute="trailing" id="TpA-v8-1d3"/>
