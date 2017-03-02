@@ -57,7 +57,7 @@ internal class DNVideoEditorController: UIViewController{
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let constraint = self.view.constraint(forIdentifier: "scrollHeightIdentifier"){
+        if let constraint = self.playbackScrollView.constraint(forIdentifier: "scrollHeightIdentifier"){
             self.view.layoutIfNeeded()
             debugPrint("playbackScrollView height before update...\(self.playbackScrollView.frame.height)")
             constraint.constant = self.nextEven(for: self.playbackScrollView.frame.height)
