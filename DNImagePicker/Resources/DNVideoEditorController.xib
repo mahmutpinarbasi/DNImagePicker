@@ -26,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31C-eQ-jKl">
-                    <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                     <items>
                         <barButtonItem style="plain" systemItem="cancel" id="itI-Zy-Khr">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -45,10 +45,10 @@
                     <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </toolbar>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-HA-t1l">
-                    <rect key="frame" x="0.0" y="64" width="375" height="503"/>
+                    <rect key="frame" x="0.0" y="44" width="375" height="523"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hir-oL-m7b">
-                            <rect key="frame" x="0.0" y="85" width="375" height="333.5"/>
+                            <rect key="frame" x="0.0" y="95" width="375" height="333.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfz-Uh-a8d" userLabel="Content View">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
@@ -76,7 +76,7 @@
                             </constraints>
                         </scrollView>
                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lDg-yO-OG4">
-                            <rect key="frame" x="169" y="233" width="37" height="37"/>
+                            <rect key="frame" x="169" y="243" width="37" height="37"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -107,7 +107,7 @@
                 <constraint firstItem="VKP-HA-t1l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SBQ-P1-eqz"/>
                 <constraint firstAttribute="trailing" secondItem="VKP-HA-t1l" secondAttribute="trailing" id="TpA-v8-1d3"/>
                 <constraint firstAttribute="bottom" secondItem="3sQ-zJ-Dul" secondAttribute="bottom" id="ff9-fm-ex1"/>
-                <constraint firstItem="31C-eQ-jKl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="oRU-Be-1dl"/>
+                <constraint firstItem="31C-eQ-jKl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oRU-Be-1dl"/>
                 <constraint firstItem="3sQ-zJ-Dul" firstAttribute="top" secondItem="VKP-HA-t1l" secondAttribute="bottom" id="s36-Nc-vot"/>
                 <constraint firstItem="31C-eQ-jKl" firstAttribute="trailing" secondItem="VKP-HA-t1l" secondAttribute="trailing" id="wVY-NG-BaZ"/>
             </constraints>
