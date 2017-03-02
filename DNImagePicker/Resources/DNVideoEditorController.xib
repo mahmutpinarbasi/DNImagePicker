@@ -27,6 +27,9 @@
             <subviews>
                 <toolbar opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31C-eQ-jKl">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Iqc-1x-gxe"/>
+                    </constraints>
                     <items>
                         <barButtonItem style="plain" systemItem="cancel" id="itI-Zy-Khr">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -44,11 +47,11 @@
                     </items>
                     <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                 </toolbar>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-HA-t1l">
-                    <rect key="frame" x="0.0" y="44" width="375" height="523"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VKP-HA-t1l" userLabel="ContainerView">
+                    <rect key="frame" x="0.0" y="167" width="375" height="333.5"/>
                     <subviews>
                         <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hir-oL-m7b">
-                            <rect key="frame" x="0.0" y="95" width="375" height="333.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zfz-Uh-a8d" userLabel="Content View">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
@@ -76,17 +79,17 @@
                             </constraints>
                         </scrollView>
                         <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="lDg-yO-OG4">
-                            <rect key="frame" x="169" y="243" width="37" height="37"/>
+                            <rect key="frame" x="169" y="148.5" width="37" height="37"/>
                         </activityIndicatorView>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="hir-oL-m7b" firstAttribute="leading" secondItem="VKP-HA-t1l" secondAttribute="leading" id="RIg-FC-yF2"/>
                         <constraint firstAttribute="trailing" secondItem="hir-oL-m7b" secondAttribute="trailing" id="cY4-lf-a73"/>
-                        <constraint firstItem="hir-oL-m7b" firstAttribute="centerY" secondItem="VKP-HA-t1l" secondAttribute="centerY" id="eIP-PF-Kjo"/>
+                        <constraint firstItem="hir-oL-m7b" firstAttribute="top" secondItem="VKP-HA-t1l" secondAttribute="top" id="dpb-7W-od4"/>
                         <constraint firstItem="lDg-yO-OG4" firstAttribute="centerX" secondItem="VKP-HA-t1l" secondAttribute="centerX" id="hIJ-pF-3gm"/>
+                        <constraint firstAttribute="bottom" secondItem="hir-oL-m7b" secondAttribute="bottom" id="iKs-G6-2ip"/>
                         <constraint firstItem="lDg-yO-OG4" firstAttribute="centerY" secondItem="VKP-HA-t1l" secondAttribute="centerY" id="nCu-rA-j8o"/>
-                        <constraint firstItem="hir-oL-m7b" firstAttribute="centerX" secondItem="VKP-HA-t1l" secondAttribute="centerX" id="uvV-hE-opa"/>
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3sQ-zJ-Dul" customClass="ICGVideoTrimmerView">
@@ -101,15 +104,14 @@
             <constraints>
                 <constraint firstItem="31C-eQ-jKl" firstAttribute="leading" secondItem="VKP-HA-t1l" secondAttribute="leading" id="3Nk-0i-ZiY"/>
                 <constraint firstAttribute="trailing" secondItem="3sQ-zJ-Dul" secondAttribute="trailing" constant="16" id="8Rd-qm-enC"/>
-                <constraint firstItem="VKP-HA-t1l" firstAttribute="top" secondItem="31C-eQ-jKl" secondAttribute="bottom" id="CHV-BT-uWM"/>
-                <constraint firstItem="hir-oL-m7b" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" identifier="scrollHeightIdentifier" id="FiX-m6-tUe"/>
                 <constraint firstItem="3sQ-zJ-Dul" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="G2c-bF-8vi"/>
+                <constraint firstItem="VKP-HA-t1l" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.5" identifier="scrollHeightIdentifier" id="Qeb-iy-E3c"/>
                 <constraint firstItem="VKP-HA-t1l" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="SBQ-P1-eqz"/>
                 <constraint firstAttribute="trailing" secondItem="VKP-HA-t1l" secondAttribute="trailing" id="TpA-v8-1d3"/>
                 <constraint firstAttribute="bottom" secondItem="3sQ-zJ-Dul" secondAttribute="bottom" id="ff9-fm-ex1"/>
                 <constraint firstItem="31C-eQ-jKl" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="oRU-Be-1dl"/>
-                <constraint firstItem="3sQ-zJ-Dul" firstAttribute="top" secondItem="VKP-HA-t1l" secondAttribute="bottom" id="s36-Nc-vot"/>
                 <constraint firstItem="31C-eQ-jKl" firstAttribute="trailing" secondItem="VKP-HA-t1l" secondAttribute="trailing" id="wVY-NG-BaZ"/>
+                <constraint firstItem="VKP-HA-t1l" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="xqg-az-cmh"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <point key="canvasLocation" x="91.5" y="101.5"/>
