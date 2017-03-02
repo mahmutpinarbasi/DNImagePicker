@@ -56,9 +56,13 @@ internal class DNVideoEditorController: UIViewController{
         super.viewDidAppear(animated)
 
         if let constraint = self.view.constraint(forIdentifier: "scrollHeightIdentifier"){
+
             self.view.layoutIfNeeded()
+            
             debugPrint("playbackScrollView height before update...\(self.playbackScrollView.frame.height)")
-            constraint.constant = self.nextEven(for: self.playbackScrollView.frame.height)
+            let add = self.nextEven(for: self.playbackScrollView.frame.height)
+            constraint.constant = add
+            self.view.layoutIfNeeded()
             debugPrint("playbackScrollView height after update...\(self.playbackScrollView.frame.height)")
         }
     }
@@ -67,12 +71,8 @@ internal class DNVideoEditorController: UIViewController{
     
     //MARK:- Utils
     private func nextEven(for value:CGFloat) -> CGFloat {
-        let intVal = Int(ceil(value))
-        if intVal % 2 == 0 {
-            return CGFloat(value)
-        }
-        
-        return CGFloat(intVal+1)
+        let amount = ceil(value) - value
+        return amount
     }
     
     private func loadAsset(){
