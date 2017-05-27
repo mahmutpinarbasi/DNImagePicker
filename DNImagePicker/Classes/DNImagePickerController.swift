@@ -107,7 +107,7 @@ extension DNImagePickerController: DNVideoEditorControllerDelegate{
     }
     
     func videoEditorController(_ videoEditController: DNVideoEditorController, didSaveEditedVideoToPath editedVideoPath: URL?) {
-        let info = [UIImagePickerControllerMediaURL:editedVideoPath]
+        let info:[String:Any] = [UIImagePickerControllerMediaURL:editedVideoPath ?? URL.init(string: "")!]
         delegate?.imagePickerController(self, didFinishPickingMediaWithInfo: info)
         dismiss()
     }

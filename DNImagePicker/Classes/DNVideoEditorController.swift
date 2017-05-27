@@ -251,7 +251,11 @@ extension DNVideoEditorController/*Crop*/{
         _exporter.exportAsynchronously(completionHandler: {[weak self]() -> Void in
             DispatchQueue.main.async(execute: {() -> Void in
                 //self.saveToLibrary(url: self._exporter.outputURL!)
-                self?.dlog("finished export: \(self?._exporter.outputURL)")
+                if let outputURL = self?._exporter.outputURL {
+                    // suppress warnings
+                    self?.dlog("finished export: \(outputURL)")
+                }
+                
                 self?.videoDidFinishExport(at: self?._exporter.outputURL)
             })
         })
